@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.container {
+  width: 750px;
+  max-width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.Text {
+  display: flex;
+  gap: 18px;
+  height: 250px;
+  width: 100%;
+  flex-direction: row;
+}
+
+#fromText, #toText {
+  flex: 1;
+  padding: 22px 28px;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 22px;
+  background: linear-gradient(145deg, #f0e7ffcc, #d6c1ffbb);
+  font-size: 18px;
+  font-weight: 500;
+  color: #2e005f;
+  resize: none;
+  box-shadow:
+    inset 2px 2px 8px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 6px rgba(138, 43, 226, 0.3),
+    0 12px 30px rgba(138, 43, 226, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  text-shadow: 0 0 4px rgba(110, 0, 255, 0.3);
+  transition: all 0.4s ease-in-out;
+  cursor: text;
+}
+
+#fromText::placeholder,
+#toText::placeholder {
+  color: rgba(110, 0, 255, 0.4);
+  font-style: italic;
+}
+
+#fromText:hover,
+#toText:hover {
+  box-shadow:
+    inset 4px 4px 12px rgba(255, 255, 255, 0.8),
+    inset -4px -4px 10px rgba(138, 43, 226, 0.5),
+    0 15px 40px rgba(138, 43, 226, 0.4);
+}
+
+#fromText:focus,
+#toText:focus {
+  outline: none;
+  background: linear-gradient(145deg, #fff0ffdd, #ccbbffdd);
+  border-color: #8a2be2;
+  box-shadow:
+    0 0 20px #8a2be2,
+    inset 0 0 6px #c59aff,
+    0 0 10px rgba(138, 43, 226, 0.6);
+  color: #3a0070;
+  transform: scale(1.02);
+}
+
+.selectArea {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  flex-direction: row;
+}
+
+.select1, .select2 {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 12px;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.05);
+  transition: 0.3s ease;
+}
+
+select {
+  padding: 10px 24px;
+  border-radius: 12px;
+  border: none;
+  background-color: #ffffff;
+  color: #222;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: 0.2s ease-in-out;
+}
+
+select:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.03);
+}
+
+#transfer {
+  width: 100%;
+  height: 55px;
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.6);
+  transition: all 0.3s ease;
+}
+
+#transfer:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(138, 43, 226, 0.7);
+}
+
+.speaker, .copy {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4));
+}
+
+.speaker:hover, .copy:hover {
+  transform: scale(1.4);
+}
+
+/* ------------------------------
+   ✅ Responsive Design Starts Here
+------------------------------- */
+
+@media (max-width: 768px) {
+  .Text {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .selectArea {
+    flex-direction: column;
+  }
+
+  #fromText, #toText {
+    font-size: 16px;
+    padding: 18px 24px;
+  }
+
+  select {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  #transfer {
+    font-size: 16px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+    gap: 18px;
+  }
+
+  .Text {
+    gap: 14px;
+  }
+
+  .select1, .select2 {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .speaker, .copy {
+    width: 20px;
+    height: 20px;
+  }
+
+  #transfer {
+    font-size: 15px;
+    height: 45px;
+  }
+
+  #fromText, #toText {
+    font-size: 15px;
+    padding: 16px 20px;
+  }
+}
